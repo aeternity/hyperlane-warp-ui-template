@@ -42,8 +42,8 @@ export const config: Config = Object.freeze({
   chainWalletWhitelists,
   enableExplorerLink: false,
   explorerApiUrl,
-  defaultOriginToken: 'ethereum-USDC',
-  defaultDestinationToken: 'base-USDC',
+  defaultOriginToken: 'sepolia-ETH',
+  defaultDestinationToken: 'aeternitytestnet-WETH',
   isDevMode,
   registryUrl,
   registryBranch,
@@ -60,11 +60,17 @@ export const config: Config = Object.freeze({
     ProtocolType.Radix,
     ProtocolType.Tron,
     ProtocolType.Aleo,
+    ProtocolType.Aeternity,
   ],
   shouldDisableChains: false,
   rpcOverrides,
   enableTrackingEvents: false,
   featuredTokens: [
+    // AE Bridge
+    'aeternitytestnet-AE',
+    'aeternitytestnet-WETH',
+    'sepolia-ETH',
+
     // USDC
     'arbitrum-USDC',
     'avalanche-USDC',

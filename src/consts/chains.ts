@@ -10,7 +10,8 @@ import {
   soon,
   soonAddresses,
 } from '@hyperlane-xyz/registry';
-import { ChainMap, ChainMetadata } from '@hyperlane-xyz/sdk';
+import { ChainMap, ChainMetadata, ExplorerFamily } from '@hyperlane-xyz/sdk';
+import { ProtocolType } from '@hyperlane-xyz/utils';
 
 // A map of chain names to ChainMetadata
 // Chains can be defined here, in chains.json, or in chains.yaml
@@ -38,29 +39,30 @@ export const chains: ChainMap<ChainMetadata & { mailbox?: Address }> = {
     ...solaxy,
     mailbox: solaxyAddresses.mailbox,
   },
-  // mycustomchain: {
-  //   protocol: ProtocolType.Ethereum,
-  //   chainId: 123123,
-  //   domainId: 123123,
-  //   name: 'mycustomchain',
-  //   displayName: 'My Chain',
-  //   nativeToken: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-  //   rpcUrls: [{ http: 'https://mycustomchain-rpc.com' }],
-  //   blockExplorers: [
-  //     {
-  //       name: 'MyCustomScan',
-  //       url: 'https://mycustomchain-scan.com',
-  //       apiUrl: 'https://api.mycustomchain-scan.com/api',
-  //       family: ExplorerFamily.Etherscan,
-  //     },
-  //   ],
-  //   blocks: {
-  //     confirmations: 1,
-  //     reorgPeriod: 1,
-  //     estimateBlockTime: 10,
-  //   },
-  //   logoURI: '/logo.svg',
-  // },
+  aeternitytestnet: {
+    protocol: ProtocolType.Aeternity,
+    chainId: 457,
+    domainId: 457,
+    name: 'aeternitytestnet',
+    displayName: 'Aeternity Testnet',
+    nativeToken: { name: 'Aeternity', symbol: 'AE', decimals: 18 },
+    rpcUrls: [{ http: 'https://testnet.aeternity.io' }],
+    blockExplorers: [
+      {
+        name: 'AeScan',
+        url: 'https://testnet.aescan.io',
+        apiUrl: 'https://testnet.aeternity.io/mdw',
+        family: ExplorerFamily.Other,
+      },
+    ],
+    blocks: {
+      confirmations: 1,
+      reorgPeriod: 0,
+      estimateBlockTime: 3,
+    },
+    logoURI: '/logos/aeternity.svg',
+    mailbox: 'ct_2dTGMpJvvSWJmBMo3mYqrA18YPmqfbFSswWTPNfXCLFBkdnrich',
+  },
 };
 
 // rent account payment for (mostly for) SVM chains added on top of IGP,

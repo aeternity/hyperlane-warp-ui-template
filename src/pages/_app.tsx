@@ -20,6 +20,7 @@ import { RadixWalletContext } from '../features/wallet/context/RadixWalletContex
 import { SolanaWalletContext } from '../features/wallet/context/SolanaWalletContext';
 import { StarknetWalletContext } from '../features/wallet/context/StarknetWalletContext';
 import { TronWalletContext } from '../features/wallet/context/TronWalletContext';
+import { AeternityWalletContext } from '../features/wallet/context/AeternityWalletContext';
 import { WarpContextInitGate } from '../features/WarpContextInitGate';
 
 import '../styles/embed-theme.css';
@@ -89,7 +90,9 @@ export default function App({ Component, pageProps }: AppProps) {
                     <RadixWalletContext>
                       <AleoWalletContext>
                         <TronWalletContext>
-                          <ThemeProvider>{content}</ThemeProvider>
+                          <AeternityWalletContext>
+                            <ThemeProvider>{content}</ThemeProvider>
+                          </AeternityWalletContext>
                         </TronWalletContext>
                       </AleoWalletContext>
                     </RadixWalletContext>
