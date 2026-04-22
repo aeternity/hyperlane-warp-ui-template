@@ -150,7 +150,7 @@ export function AeternityWalletContext({ children }: PropsWithChildren) {
       const aeTx = tx.transaction;
       const contract = await Contract.initialize({
         ...sdk.getContext(),
-        aci: WARP_ROUTER_ACI,
+        aci: [WARP_ROUTER_ACI],
         address: aeTx.contractId as `ct_${string}`,
       });
 
@@ -162,6 +162,7 @@ export function AeternityWalletContext({ children }: PropsWithChildren) {
       const result = await method(...aeTx.args, {
         ...(aeTx.options?.amount != null ? { amount: aeTx.options.amount.toString() } : {}),
         ...(aeTx.options?.gas != null ? { gas: aeTx.options.gas } : {}),
+        omitUnknown: true,
       });
 
       const txHash = result.hash as string;
