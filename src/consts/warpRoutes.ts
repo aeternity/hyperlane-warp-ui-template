@@ -9,27 +9,27 @@ export const warpRouteConfigs: WarpCoreConfig = {
     {
       chainName: 'sepolia',
       standard: TokenStandard.EvmHypNative,
-      addressOrDenom: '0xe755e439003d249Ae36A64278a8136A88B556B95',
+      addressOrDenom: '0xBc8CEA629B5c473eC4717e1a0Ee5969F48bf6DFB',
       name: 'Ether',
       symbol: 'ETH',
       decimals: 18,
       connections: [
         {
           token:
-            'aeternity|aeternitytestnet|ct_21JC6za6HBjpQArLG8xYBx34vkzx7Xg4ufGHYHRobFLhB1znsv',
+            'aeternity|aeternitytestnet|ct_2SgKXgGdMpS3FvGaa59YUYGmdUbhNBSeNvsrtymV2iEU3YGx4m',
         },
       ],
     },
     {
       chainName: 'aeternitytestnet',
       standard: TokenStandard.AeternityHypSynthetic,
-      addressOrDenom: 'ct_21JC6za6HBjpQArLG8xYBx34vkzx7Xg4ufGHYHRobFLhB1znsv',
+      addressOrDenom: 'ct_2SgKXgGdMpS3FvGaa59YUYGmdUbhNBSeNvsrtymV2iEU3YGx4m',
       name: 'Wrapped Ether',
       symbol: 'WETH',
       decimals: 18,
       connections: [
         {
-          token: 'ethereum|sepolia|0xe755e439003d249Ae36A64278a8136A88B556B95',
+          token: 'ethereum|sepolia|0xBc8CEA629B5c473eC4717e1a0Ee5969F48bf6DFB',
         },
       ],
     },
@@ -38,27 +38,27 @@ export const warpRouteConfigs: WarpCoreConfig = {
     {
       chainName: 'aeternitytestnet',
       standard: TokenStandard.AeternityHypNative,
-      addressOrDenom: 'ct_tbRpzXSYePKvzFGe4F3X1M4cTWnfV24NH7YwdN3bhP96Rj2ep',
+      addressOrDenom: 'ct_2wBpCf9zDV46YYfP79v5zCLLevKmGL8mHrvqdV68QuW8X5svCu',
       name: 'Aeternity',
       symbol: 'AE',
       decimals: 18,
       connections: [
         {
-          token: 'ethereum|sepolia|0xddFddf720F0F057F16026851D8622cE4d0A205B9',
+          token: 'ethereum|sepolia|0x3372Db191c284452d7e013C6336B8D5cf5450d83',
         },
       ],
     },
     {
       chainName: 'sepolia',
       standard: TokenStandard.EvmHypSynthetic,
-      addressOrDenom: '0xddFddf720F0F057F16026851D8622cE4d0A205B9',
+      addressOrDenom: '0x3372Db191c284452d7e013C6336B8D5cf5450d83',
       name: 'Aeternity',
       symbol: 'AE',
       decimals: 18,
       connections: [
         {
           token:
-            'aeternity|aeternitytestnet|ct_tbRpzXSYePKvzFGe4F3X1M4cTWnfV24NH7YwdN3bhP96Rj2ep',
+            'aeternity|aeternitytestnet|ct_2wBpCf9zDV46YYfP79v5zCLLevKmGL8mHrvqdV68QuW8X5svCu',
         },
       ],
     },
