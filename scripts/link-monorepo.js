@@ -11,6 +11,7 @@ const LOCAL_TARBALLS_DIR = path.join(REACT_APP_DIR, '.monorepo-tarballs');
 
 // Default packages to link. Add new entries here as needed.
 const DEFAULT_PACKAGES = [
+  'aeternity-sdk',
   'aleo-sdk',
   'cosmos-sdk',
   'deploy-sdk',
@@ -77,7 +78,15 @@ console.log(`✅ Found monorepo at: ${MONOREPO_PATH}\n`);
 console.log('------------------------------------------');
 console.log('🏗️  Building entire monorepo...');
 console.log('   This ensures all dependencies are built in the correct order\n');
-if (!run('pnpm build', MONOREPO_PATH)) {
+const buildFilters = args.map(folder => {
+  const pkgPath = path.join(TYPESCRIPT_DIR, folder, 'package.json');
+  if (fs.existsSync(pkgPath)) {
+    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+    return `--filter=${pkg.name}`;
+  }
+  return `--filter=@hyperlane-xyz/${folder}`;
+}).join(' ');
+if (!run(`pnpm build ${buildFilters}`, MONOREPO_PATH)) {
   console.error('\n❌ Monorepo build failed. Please fix errors and try again.');
   process.exit(1);
 }

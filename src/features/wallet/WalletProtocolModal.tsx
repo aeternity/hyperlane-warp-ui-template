@@ -25,6 +25,7 @@ export const PROTOCOL_OPTIONS = [
     subtitle: 'an Aleo',
     logoClassName: 'wallet-protocol-aleo-logo',
   },
+  { protocol: ProtocolType.Aeternity, title: 'Aeternity', subtitle: 'an Aeternity' },
 ];
 
 export function WalletProtocolModal({
